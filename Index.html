@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Decoración</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        nav {
+            background-color: #333;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            font-size: 18px;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 30px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            text-decoration: none;
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú -->
+    <nav>
+        <a href="#" onclick="showTab('papelTapiz')">Papel Tapiz</a>
+        <a href="#" onclick="showTab('pisoLaminado')">Piso Laminado</a>
+        <a href="#" onclick="showTab('persianas')">Persianas</a>
+        <a href="#" onclick="showTab('otros')">Otros Productos</a>
+    </nav>
+
+    <!-- Papel Tapiz -->
+    <div id="papelTapiz" class="content active">
+        <h2>Catálogo de Papel Tapiz</h2>
+        <div class="gallery">
+            <img src="imagenes/papel tapiz 1.jpeg" alt="Papel Tapiz 1">
+            <img src="imagenes/papel tapiz 2.jpeg" alt="Papel Tapiz 2">
+            <img src="imagenes/papel3.jpg" alt="Papel Tapiz 3">
+        </div>
+    </div>
+
+    <!-- Piso Laminado -->
+    <div id="pisoLaminado" class="content">
+        <h2>Catálogo de Piso Laminado</h2>
+        <div class="gallery">
+            <img src="imagenes/piso1.jpg" alt="Piso Laminado 1">
+            <img src="imagenes/piso2.jpg" alt="Piso Laminado 2">
+            <img src="imagenes/piso3.jpg" alt="Piso Laminado 3">
+        </div>
+    </div>
+
+    <!-- Persianas -->
+    <div id="persianas" class="content">
+        <h2>Catálogo de Persianas</h2>
+        <div class="gallery">
+            <img src="imagenes/persiana1.jpg" alt="Persiana 1">
+            <img src="imagenes/persiana2.jpg" alt="Persiana 2">
+            <img src="imagenes/persiana3.jpg" alt="Persiana 3">
+        </div>
+    </div>
+
+    <!-- Otros Productos -->
+    <div id="otros" class="content">
+        <h2>Otros Productos</h2>
+        <div class="gallery">
+            <img src="imagenes/otro1.jpg" alt="Producto 1">
+            <img src="imagenes/otro2.jpg" alt="Producto 2">
+            <img src="imagenes/otro3.jpg" alt="Producto 3">
+        </div>
+    </div>
+
+    <!-- Botón WhatsApp -->
+    <a href="https://wa.me/526864254741" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        💬
+    </a>
+
+    <!-- Script para el cambio de pestañas -->
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
